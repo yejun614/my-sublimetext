@@ -1,0 +1,7 @@
+{
+  "shell_cmd": "echo [Program Started] && if [ -f ${file_base_name}.in ]; then python3 $file_name < ./$file_base_name.in; else python3 $file_name; fi",
+  "working_dir": "$file_path",
+  "selector": "source.python",
+  "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+  "interactive": true,
+}

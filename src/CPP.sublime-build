@@ -1,0 +1,26 @@
+{
+  "shell_cmd": "g++ -std=c++17 -O2 -Wno-unused-result -Wno-c++20-extensions -o $file_base_name $file_name",
+  "working_dir": "$file_path",
+  "selector": "source.c, source.c++",
+  "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+  "interactive": true,
+
+  "variants": [
+    {
+      "name": "Build and Run",
+      "shell_cmd": "g++ -std=c++17 -O2 -Wno-unused-result -Wno-c++20-extensions -o $file_base_name $file_name && echo [Program Started] && if [ -f ${file_base_name}.in ]; then ./$file_base_name < ./$file_base_name.in; else ./$file_base_name; fi && rm $file_base_name",
+    },
+    {
+      "name": "Build Debug",
+      "shell_cmd": "g++ -std=c++17 -O2 -Wno-unused-result -Wno-c++20-extensions -g -o $file_base_name $file_name"
+    },
+    {
+      "name": "Run",
+      "shell_cmd": "echo [Program Started] && if [ -f ${file_base_name}.in ]; then ./$file_base_name < ./$file_base_name.in; else ./$file_base_name; fi"
+    },
+    {
+      "name": "Clean",
+      "shell_cmd": "rm -rf $file_base_name $file_base_name.dSYM"
+    },
+  ]
+}

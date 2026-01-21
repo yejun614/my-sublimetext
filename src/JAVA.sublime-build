@@ -1,0 +1,38 @@
+{
+  "target": "java_builder",
+  "selector": "source.java",
+  "mode": "all",
+  "cancel": { "kill": true },
+  "java_home": "/Users/yejunjung/.local/share/mise/installs/java/openjdk-21.0.2"
+}
+// {
+//   "shell_cmd": "javac $file_name",
+//   "working_dir": "$file_path",
+//   "selector": "source.java",
+//   "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+//   "path": "/bin:/Users/yejunjung/.local/share/mise/installs/java/openjdk-21/bin",
+//   "env": {
+//     "JAVA_HOME": "/Users/yejunjung/.local/share/mise/installs/java/openjdk-21.0.2"
+//   },
+//   "interactive": true,
+
+//   "variants": [
+//     {
+//       "name": "Test",
+//       "shell_cmd": "echo $(pwd); echo $file_name"
+//       // && cd $(awk '/^package/ {sub(/^package[[:space:]]*/, \"\"); sub(/;.*$/, \"\"); depth = gsub(/\\./, \".\") + 1; for (i=0; i<depth; i++) printf \"../\"; exit}' \"$file_name\") && echo $(pwd)
+//     },
+//     {
+//       "name": "Build and Run",
+//       "shell_cmd": "javac $file_name && echo [Program Started] && if [ -f ${file_base_name}.in ]; then java ${file_base_name} < ./${file_base_name}.in; else java ${file_base_name}; fi && rm ${file_base_name}.class",
+//     },
+//     {
+//       "name": "Run",
+//       "shell_cmd": "echo [Program Started] && if [ -f ${file_base_name}.in ]; then java ${file_base_name} < ./${file_base_name}.in; else java ${file_base_name}; fi"
+//     },
+//     {
+//       "name": "Clean",
+//       "shell_cmd": "rm ${file_base_name}.class"
+//     },
+//   ]
+// }
